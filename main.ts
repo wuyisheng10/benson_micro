@@ -1,11 +1,13 @@
 radio.onReceivedNumber(function (receivedNumber) {
+    count = 0
     if (receivedNumber == 1) {
-        music.playMelody("B D B D B F E A ", 344)
-        LED.showColor(neopixel.colors(NeoPixelColors.Red))
-    } else {
-        music.playMelody("B D B D B F E A ", 344)
-        LED.showColor(neopixel.colors(NeoPixelColors.Yellow))
+        while (count < 10) {
+            music.playMelody("B D B D B F E A ", 344)
+            images.iconImage(IconNames.Heart).showImage(0)
+            count += 1
+        }
     }
+    images.iconImage(IconNames.Yes).showImage(0)
 })
 input.onButtonPressed(Button.A, function () {
     LED.showColor(neopixel.colors(NeoPixelColors.Red))
@@ -17,6 +19,13 @@ input.onButtonPressed(Button.A, function () {
         . . # . .
         # # # # #
         `).showImage(0)
+    count = 0
+    while (count < 10) {
+        music.playMelody("B D B D B F E A ", 344)
+        images.iconImage(IconNames.Heart).showImage(0)
+        count += 1
+    }
+    images.iconImage(IconNames.Yes).showImage(0)
 })
 input.onButtonPressed(Button.AB, function () {
     LED.showColor(neopixel.colors(NeoPixelColors.Black))
